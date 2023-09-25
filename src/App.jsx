@@ -1,14 +1,16 @@
-import RowsContainer from "./components/RowsContainer"
-import TableRow from "./components/TableRow"
-import Header from "./components/header"
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Header from "./components/header";
 
 function App() {
-
   return (
-    <>
-      
-      <RowsContainer />
-    </>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/*" element={<Home />} />
+        <Route path="/home" element={<Home />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

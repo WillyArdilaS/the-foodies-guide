@@ -1,21 +1,12 @@
+
 import TableRow from "./TableRow"
 
 const RowsContainer = () => {
-  return (
-    <>
-        <article className="flex flex-col justify-between items-center h-screen w-full overflow-y-auto" id="topTable">
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-            <TableRow/>
-        </article>
-    </>
-  )
+    return (
+        <div className="flex flex-col items-center content-center h-screen w-full overflow-y-auto border-x-2 border-red-600">
+            <TableRow />
+        </div>
+    );
 }
 
 export default RowsContainer
