@@ -7,7 +7,7 @@ const Header = () => {
         <header>
             <nav className="flex items-center justify-between flex-wrap p-8 fixed w-full z-10 pin-t bg-yellowDark">
                 <div className="flex items-center flex-no-shrink ml-2 md:ml-6 lg:ml-16" id="nav-logo">
-                    <a className="text-black no-underline hover:text-white" href="#">
+                    <a className="text-black no-underline hover:text-white" href="home">
                         <span className="text-3xl font-paragraph font-semibold"> TFG </span>
                     </a>
                 </div>
