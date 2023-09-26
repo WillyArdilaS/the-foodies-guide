@@ -1,0 +1,33 @@
+{
+    "restaurants": [
+      {
+        "nombre": "Restaurante La Delicia",
+        "descripcion": "Un lugar acogedor con una amplia selección de platos internacionales.",
+        "direccion": "Calle Principal #123, Ciudad Ejemplo",
+        "rango_de_precios": "$30.000 - $60.000",
+        "numero_de_contacto": "+1 (123) 456-7890"
+      },
+      {
+        "nombre": "Parrilla El Asador",
+        "descripcion": "Especialidades de carnes a la parrilla en un ambiente familiar.",
+        "direccion": "Avenida Central #456, Ciudad Ejemplo",
+        "rango_de_precios": "$40.000 - $80.000",
+        "numero_de_contacto": "+1 (234) 567-8901"
+      },
+      {
+        "nombre": "Sushi Palace",
+        "descripcion": "Auténtica comida japonesa con variedad de sushi y sashimi.",
+        "direccion": "Plaza Comercial #789, Ciudad Ejemplo",
+        "rango_de_precios": "$50.000 - $100.000",
+        "numero_de_contacto": "+1 (345) 678-9012"
+      },
+      {
+        "nombre": "Cafetería Bella Vista",
+        "descripcion": "Café recién tostado y repostería artesanal con vista panorámica.",
+        "direccion": "Cerro Bella Vista, Ciudad Ejemplo",
+        "rango_de_precios": "$20.000 - $40.000",
+        "numero_de_contacto": "+1 (456) 789-0123"
+      }
+    ]
+  }
+  
