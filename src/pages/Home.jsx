@@ -3,6 +3,7 @@ import img1 from "../assets/HomeImg1.png"
 import img2 from "../assets/HomeImg2.png"
 import img3 from "../assets/HomeImg3.png"
 import img4 from "../assets/HomeImg4.png"
+import Header from "../components/header/Header";
 
 const backgroundStyle = {
     backgroundImage: `url(${bgImage})`,
@@ -12,6 +13,7 @@ const backgroundStyle = {
 const Home = () => {
   return (
     <>
+        <Header />
         <div className="min-h-screen bg-cover bg-no-repeat xl:flex"  style={backgroundStyle}>
             <section className="xl:w-4/5"> 
                 <h1 className="pt-40 xl:pt-64 xl:pl-24 font-title text-7xl md:text-8xl 2xl:text-9xl text-center xl:text-left font-black text-orangeDark animate-fade-down animate-once animate-ease-out animate-duration-[2500]">The Foodie's Guide</h1>

@@ -1,13 +1,16 @@
 import { useState } from "react"
-import restaurantImage from "../assets/ImgRestaurante.jpg"
+import restaurantImage from "../../assets/ImgRestaurante.jpg"
 
-const TableRow = () => {
+const TableRow = ({restaurantInfo}) => {
+    console.log(restaurantInfo)
     const [onDetails, setOnDetails] = useState(false)
 
+    const {nombre,descripcion,direccion,rango_de_precios,numero_de_contacto} = restaurantInfo;
+    
     return (
         <article className="flex flex-col p-4 md:px-8 md:py-6 fixed w-full lg:w-3/4 z-10 bg-white rounded-lg shadow-md lg:hover:scale-105" id="tableRow">
             <section className="flex items-center justify-between" id="tableRow-main">
-                <h2 className="mr-4 font-paragraph font-semibold text-black text-xs md:text-lg lg:text-xl" id="tableRow-name"> Nombre restaurante </h2>
+                <h2 className="mr-4 font-paragraph font-semibold text-black text-xs md:text-lg lg:text-xl" id="tableRow-name"> {nombre} </h2>
 
                 <section className="flex items-center justify-between w-2/5 md:w-1/3 lg:w-1/4">
                     <section className="flex items-center -ml-2 justify-between w-5/6 lg:w-3/4" id="tableRow-rating">
@@ -46,18 +49,18 @@ const TableRow = () => {
                 <img src={restaurantImage} alt="Foto del restaurante" className="h-48 w-2/5 md:w-1/3 object-cover rounded-lg" />
                 <section className="w-1/2 md:w-3/5 lg:w-1/2 text-right" id="details-right">
                     <h2 className="font-paragraph font-medium text-xs md:text-sm lg:text-base text-black" id="details-description">
-                        Disfruta del delicioso sabor de nuestras hamburguesas, perros calientes, ensaladas, wraps, papas a la francesa, malteadas, helados y mucho más ¡Entra ya!
+                        {descripcion}
                     </h2>
 
                     <h2 className="mt-4 font-paragraph font-medium text-xs md:text-sm lg:text-base text-black" id="details-direction"> 
-                        <span className="font-semibold"> Dirección: </span> Cl 17 Sur # 19 - 04/10 
+                        <span className="font-semibold"> Dirección: </span> {direccion}
                     </h2>
 
                     <h2 className="mt-4 font-paragraph font-medium text-xs md:text-sm lg:text-base text-black" id="details-prices"> 
-                        <span className="font-semibold"> Precios: </span> $30.000 - $60.000
+                        <span className="font-semibold"> Precios: </span> {rango_de_precios}
                     </h2>
                     <h2 className="mt-4 font-paragraph font-medium text-xs md:text-sm lg:text-base text-black" id="details-prices"> 
-                        <span className="font-semibold"> Contacto: </span> 6016543354
+                        <span className="font-semibold"> Contacto: </span> {numero_de_contacto}
                     </h2>
                 </section>
             </section>
