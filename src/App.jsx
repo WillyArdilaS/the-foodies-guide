@@ -3,6 +3,7 @@ import { routes } from "./data/routes";
 import Header from "./components/header/Header"
 import Home from "./pages/Home";
 import Categorie from "./pages/Categorie"
+import Statistics from "./pages/Statistics";
 
 
 function App() {
@@ -14,10 +15,10 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      
       <Routes>
         <Route path="/*" element={<Home />} />
         <Route path="/home" element={<Home />} />
+        <Route path="/statistics" element={<Statistics />} />
         {EnhancedRoutes}
       </Routes>
     </BrowserRouter>
