@@ -1,0 +1,24 @@
+{
+    "categories" : [
+        {
+            "categoria": "Hamburguesas",
+            "cantRestaurantes": 5
+        },
+        {
+            "categoria": "Pizzas",
+            "cantRestaurantes": 5
+        },
+        {
+            "categoria": "Vegetariana",
+            "cantRestaurantes": 5
+        },
+        {
+            "categoria": "Bares",
+            "cantRestaurantes": 5
+        },
+        {
+            "categoria": "Colombiana",
+            "cantRestaurantes": 5
+        }
+    ]
+}

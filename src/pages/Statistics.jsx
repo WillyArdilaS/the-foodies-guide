@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import BarGraphic from '../components/statistics/BarGraphic';
 import Pies from '../components/statistics/Pies';
 import Map from '../components/statistics/Map';
+import Header from '../components/header/Header';
 
 
 const Statistics = () => {
@@ -27,6 +28,8 @@ const Statistics = () => {
 
     return (
         <>
+            <Header />
+
             <div className="min-h-screen bg-gray-100 p-4">
                 <h1 className="w-3/4 xl:w-3/5 mx-auto pt-20 xl:pt-24 pb-6 font-title text-2xl md:text-4xl lg:text-5xl text-center font-black text-black animate-fade-down animate-once 
           animate-ease-out animate-duration-[2500]">Estadísticas</h1>
