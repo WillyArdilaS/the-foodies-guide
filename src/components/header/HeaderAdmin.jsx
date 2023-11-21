@@ -9,7 +9,7 @@ const HeaderAdmin = () => {
         <header>
             <nav className="flex items-center justify-between flex-wrap fixed p-8 w-full z-10 pin-t bg-yellowDark">
                 <div className="flex items-center flex-no-shrink ml-2 md:ml-6 lg:ml-16" id="nav-logo">
-                    <Link to="/admin/settings" className="text-black no-underline hover:text-white"><span className="text-3xl font-paragraph font-semibold"> TFG </span></Link>
+                    <Link to="/admin/home" className="text-black no-underline hover:text-white"><span className="text-3xl font-paragraph font-semibold"> TFG </span></Link>
                 </div>
 
                 <div className="block lg:hidden mr-2 md:mr-6">

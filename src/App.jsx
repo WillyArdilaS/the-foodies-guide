@@ -24,7 +24,7 @@ function App() {
         
         <Route path="/admin">
           <Route path="" element={<AdminLogIn />}/>
-          <Route path="settings" element={<AdminSettings />}/>
+          <Route path="home" element={<AdminSettings />}/>
           <Route path="signUp" element={<AdminSignUp />}/>
         </Route>
       </Routes>

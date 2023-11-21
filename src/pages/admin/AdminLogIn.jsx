@@ -39,7 +39,7 @@ const AdminLogIn = () => {
                         title: `Bienvenid@ ${username}` ,
                     });
     
-                    navigate("/admin/settings", {
+                    navigate("/admin/home", {
                         replace: ("/admin", true)
                     });
                 }

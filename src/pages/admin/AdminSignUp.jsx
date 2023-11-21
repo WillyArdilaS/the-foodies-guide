@@ -74,9 +74,7 @@ const AdminSignUp = () => {
                 <main className="container flex justify-center mx-auto">
                     <article id="userRegister" className="w-2/5 2xl:w-1/3 mt-56 absolute rounded-2xl bg-gradient-to-b from-orangeLight to-orangeDark shadow-md  
                     animate-fade-down animate-once animate-ease-out">
-                        <h1 id="appTitle" className="mt-10 mb-16 text-white font-extrabold font-title text-4xl text-center">TFG</h1>
-                        
-                        <form action="" id="userRegister-form" className="mt-6">
+                        <form action="" id="userRegister-form" className="mt-6 pt-10">
                             <div className="w-4/5 flex justify-between mx-auto">
                                 <div id="form-idType">
                                     <label htmlFor="idType"></label>
