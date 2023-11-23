@@ -1,10 +1,8 @@
-// TableRow.js
-
 import { useState } from "react";
 
-const TableRow = ({ restaurantInfo }) => {
+const TableRow = ({ restaurantInfo, setActualRestaurantID }) => {
     const [onDetails, setOnDetails] = useState(false);
-    const { foto, nombre, direccion, rango_de_precios, telefono, rating } = restaurantInfo;
+    const { id, foto, nombre, direccion, rango_de_precios, telefono, rating } = restaurantInfo;
 
     const renderStars = () => {
         if(rating != "No disponible") {
@@ -57,7 +55,7 @@ const TableRow = ({ restaurantInfo }) => {
             <section className="flex items-center justify-between w-2/5 md:w-1/3 lg:pr-3">
                 {renderStars()}
 
-                <button id="tableRow-button" className="text-black hover:scale-110" onClick={() => { setOnDetails(!onDetails) }}>
+                <button id="tableRow-button" className="text-black hover:scale-110" onClick={() => { setOnDetails(!onDetails); setActualRestaurantID(id) }}>
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" className="w-4 h-4 md:w-6 md:h-6 lg:w-7 lg:h-7">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5" />
                 </svg>
