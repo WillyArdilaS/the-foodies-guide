@@ -1,23 +1,31 @@
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
 import { Bar } from 'react-chartjs-2';
+import { useEffect, useState } from "react";
+import axios from "axios";
+
 ChartJS.register(CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend);
 
+const BarGraphic = ({bdurl}) => {
+    const [restaurantesBogota, setRestaurantesBogota] = useState([]);
 
-const BarGraphic = () => {
-
-    // data de ejemplo
-    const restaurantesBogota = [
-        { nombre: 'La Cocina del Chef', calificacion: 4.5 },
-        { nombre: 'Sabor Capitalino', calificacion: 3.2 },
-        { nombre: 'Gastronomía Bogotana', calificacion: 4.0 },
-        { nombre: 'El Rincón Sabroso', calificacion: 2.8 },
-        { nombre: 'Sabores de la Ciudad', calificacion: 5.0 },
-        { nombre: 'Platos Criollos', calificacion: 3.7 },
-        { nombre: 'Aromas de Bogotá', calificacion: 4.1 },
-        { nombre: 'Delicias en el Centro', calificacion: 2.5 },
-        { nombre: 'Gusto Capital', calificacion: 4.8 },
-        { nombre: 'El Sazón Bogotano', calificacion: 3.9 }
-    ];
+    useEffect(() => {
+        setRestaurantesBogota([]);
+      
+        axios.get(`http://localhost:3000/restaurantes/categoria/${bdurl}`)
+        .then((res) => {
+            const restaurantesData = res.data
+            .filter(item => item.rating !== "No disponible")
+            .map(item => ({ nombre: item.nombre, calificacion: item.rating }));
+      
+            // Seleccionar solo los primeros 10 restaurantes
+            const primeros10Restaurantes = restaurantesData.slice(0, 10);
+      
+            setRestaurantesBogota(element => [...element, ...primeros10Restaurantes]);
+        })
+        .catch((err) => {
+            console.log(err);
+        });
+    }, [bdurl]);      
 
     const restaurantesOrdenados = [...restaurantesBogota].sort((a, b) => b.calificacion - a.calificacion);
 
@@ -53,7 +61,7 @@ const BarGraphic = () => {
         plugins: {
             title: {
                 display: true,
-                text: 'TOP 10 mejores restaurantes calificados',
+                text: 'TOP 10 restaurantes mejores calificados',
             },
         },
         scales: {

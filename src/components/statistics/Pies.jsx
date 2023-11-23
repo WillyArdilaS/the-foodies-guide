@@ -32,7 +32,7 @@ const data = {
   ],
 };
 
-const DoughnutGraphic = () => {
+const DoughnutGraphic = ({bdurl}) => {
   return <Pie data={data} options={options} />;
 };
 

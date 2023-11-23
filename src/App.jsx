@@ -9,8 +9,8 @@ import AdminSignUp from "./pages/admin/AdminSignUp";
 
 
 function App() {
-  const EnhancedRoutes = routes.map(({component, path, data, name}) => {
-    const EnhancedComponet = <Categorie Component={component} restaurants={data} name={name}/>;
+  const EnhancedRoutes = routes.map(({component, path, name, bdurl}) => {
+    const EnhancedComponet = <Categorie Component={component} name={name} bdurl={bdurl} />;
     return <Route key={path} path={path} element={EnhancedComponet} />;
   });
   

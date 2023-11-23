@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom'
 import BarGraphic from '../components/statistics/BarGraphic';
 import Pies from '../components/statistics/Pies';
 import Map from '../components/statistics/Map';
@@ -6,6 +7,8 @@ import Header from '../components/header/Header';
 
 
 const Statistics = () => {
+    const location = useLocation()
+    const { bdurl } = location.state
     const [selectedGraph, setSelectedGraph] = useState('bar'); 
 
     const handleSelectChange = (event) => {
@@ -16,11 +19,11 @@ const Statistics = () => {
     const renderSelectedGraph = () => {
         switch (selectedGraph) {
             case 'bar':
-                return <BarGraphic />;
+                return <BarGraphic bdurl={bdurl}/>;
             case 'doughnut':
-                return <Pies />;
+                return <Pies bdurl={bdurl} />;
             case 'map':
-                return <Map />;
+                return <Map bdurl={bdurl} />;
             default:
                 return null;
         }
@@ -30,10 +33,10 @@ const Statistics = () => {
         <>
             <Header />
 
-            <div className="min-h-screen bg-gray-100 p-4">
-                <h1 className="w-3/4 xl:w-3/5 mx-auto pt-20 xl:pt-24 pb-6 font-title text-2xl md:text-4xl lg:text-5xl text-center font-black text-black animate-fade-down animate-once 
-          animate-ease-out animate-duration-[2500]">Estadísticas</h1>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+            <div className="min-h-screen bg-gray-100 mx-auto pt-12 xl:pt-16 ">
+                <h1 className="w-3/4 xl:w-3/5 mx-auto pt-20 xl:pt-24 pb-6 font-title text-2xl md:text-4xl lg:text-5xl text-center font-black text-black 
+                animate-fade-down animate-once animate-ease-out animate-duration-[2500]">Estadísticas</h1>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 animate-fade-down animate-once animate-ease-out animate-duration-[2500">
                     <div className="bg-white p-6 rounded-md shadow-md">
                         <h2 className="text-lg font-semibold mb-4">Seleccionar Tipo de Gráfico</h2>
                         <select
@@ -47,7 +50,7 @@ const Statistics = () => {
                         </select>
                     </div>
                     <div className="col-span-2 bg-white p-6 rounded-md shadow-md">
-                        <h2 className="text-lg font-semibold mb-4">Gráfico Seleccionado</h2>
+
                         <div className="w-full h-96 border rounded-md overflow-hidden">
                             {renderSelectedGraph()}
                         </div>

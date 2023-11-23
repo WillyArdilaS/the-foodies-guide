@@ -1,34 +1,34 @@
 import RowsContainer from "../components/categories/RowsContainer"
-import { restaurants } from "./restaurants.json"
+
 export const routes=[
     {
         component: RowsContainer,
         path:"/HamburgerCategory",
-        data: restaurants,
-        name: "HAMBURGUESAS"
+        name: "HAMBURGUESAS",
+        bdurl: "hamburguesa"
     },
     {
         component: RowsContainer,
         path:"/PizzaCategory",
-        data: restaurants,
-        name: "PIZZAS"
+        name: "PIZZAS",
+        bdurl: "pizza"
     },
     {
         component: RowsContainer,
         path:"/BarsCategory",
-        data: restaurants,
-        name: "BARES"
+        name: "BARES",
+        bdurl: "cerveza"
     },
     {
         component: RowsContainer,
         path:"/VegetarianCategory",
-        data: restaurants,
-        name: "RESTAURANTES VEGETARIANOS"
+        name: "RESTAURANTES VEGETARIANOS",
+        bdurl: "vegetariana"
     },
     {
         component: RowsContainer,
         path:"/ColombianCategory",
-        data: restaurants,
-        name: "RESTAURANTES COLOMBIANOS"
+        name: "RESTAURANTES COLOMBIANOS",
+        bdurl: "colombiana"
     }  
 ]

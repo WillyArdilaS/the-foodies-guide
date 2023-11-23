@@ -11,7 +11,7 @@ const backgroundStyle = {
 };
 
 const AdminLogIn = () => {
-    const [username, setUsername] = useState("");
+    const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
     const navigate = useNavigate()
@@ -19,39 +19,29 @@ const AdminLogIn = () => {
     const handleLogin = (e) => {
         e.preventDefault();
 
-        if(!username || !password) {
+        if(!email || !password) {
             Swal.fire({
                 icon: 'info',
                 title: 'Faltan campos por llenar',
             });
             
         } else {
-            axios.get('http://127.0.0.1:8000/api/login', {params:{usuario: username, contrasena: password}})
+            axios.post('http://localhost:3000/user/login', {email: email, password: password})
             .then(res => {
-                if(res.data.mensaje != "Login exitoso.") {
-                    Swal.fire({
-                        icon: 'error',
-                        title: res.data,
-                    });
-                } else {
-                    Swal.fire({
-                        icon: 'success',
-                        title: `Bienvenid@ ${username}` ,
-                    });
-    
-                    navigate("/admin/home", {
-                        replace: ("/admin", true)
-                    });
-                }
+                Swal.fire({
+                    icon: 'success',
+                    title: `Bienvenid@` ,
+                });
 
+                navigate("/admin/home", {
+                    replace: ("/admin", true)
+                });
             })
             .catch(err => {
                 Swal.fire({
                     icon: 'error',
-                    title: 'Error al ingresar',
+                    title: `Error: \n${err.response.data.message}`,
                 })
-
-                console.log(err);  
             })
         }
     }
@@ -66,9 +56,9 @@ const AdminLogIn = () => {
                     <form id="userSignIn-form">
                         <div id="form-username" className="flex justify-center">
                             <label htmlFor="username"></label>
-                            <input type="text" name="username" id="username" placeholder="Usuario" value={username} required
+                            <input type="email" name="email" id="email" placeholder="Email" value={email} required
                                 className="w-3/4 mb-10 px-3 py-2 rounded-md bg-white shadow-md text-black font-medium font-title placeholder-slate-400" 
-                                onChange={(e) => setUsername(e.target.value)}/>
+                                onChange={(e) => setEmail(e.target.value)}/>
                         </div>
 
                         <div id="form-password" className="flex justify-center">
